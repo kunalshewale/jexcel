@@ -7750,10 +7750,10 @@ var jexcel = function (el, options) {
               ? 1
               : 51;
             var shifted =
-              scrollLeft +
+              scrollLeft ? (scrollLeft +
               (i > 0 ? obj.records[j][i - 1].style.width : 0) -
               indexColumnWidth +
-              'px';
+              'px') : (indexColumnWidth + 'px');
             obj.records[j][i].classList.add('jexcel_freezed');
             obj.records[j][i].style.left = shifted;
           }
